@@ -26,8 +26,50 @@ and there is a website http://dotnetnew.azurewebsites.net
 
 
 ```
+mkdir src
+cd src
 dotnet new console -lang F# -n mechanic
+```
+This creates a new dotnet core library project.
+
+With the dotnetcommand, we can now compile our Project:
+```
+dotnet build src/mechanic/mechanic.fsproj
+
+#or
+cd src/mechanic
+dotnet build 
+``` 
+Because it is a `library` it has no executable, so there is nothing to run
+
+Let commit our changes into git into `git`
+```
 echo obj > .gitignore
 git add .
 git commit -m "Create mechanic project"
 ```
+and then create a Console Project, which will be our TestLibrary
+```
+mkdir test 
+cd test
+dotnet new console -lang F# -n mechanicTests
+```
+
+Now lets create a solution file, which is a list of projects,
+```
+dotnet new sln --name mechanic
+```
+and add the two projects
+```
+dotnet sln mechanic.sln add src/mechanic/mechanic.fsproj   
+dotnet sln mechanic.sln add test/mechanicTests/mechanicTests.fsproj
+```
+
+Now we can build the solution (of the two projects) from the project directory
+```
+dotnet build 
+```
+
+
+
+
