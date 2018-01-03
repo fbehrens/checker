@@ -80,4 +80,15 @@ and run the console-project
 ```
 dotnet run --project test/mechanicTests/mechanicTests.fsproj   
 ```
+## init paket
 
+Download `paket.bootstrapper`, `paket.targets` and `paket.restore.targets` from github into a new folder `.paket`
+```
+mkdir .paket
+cp ~/Downloads/paket.* .paket
+
+mono .paket/pakete.bootstrapper.exe # download latest paket
+echo .paket.paket.exe >> .gitignore
+
+mono .paket\paket.exe init
+```
