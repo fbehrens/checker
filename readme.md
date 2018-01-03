@@ -92,3 +92,9 @@ echo .paket.paket.exe >> .gitignore
 
 mono .paket\paket.exe init
 ```
+
+Edit `paket.dependencies`, create `test/MechanicTests/paket.references`
+and install the dependencies with 
+```
+mono .paket\paket.exe install
+```

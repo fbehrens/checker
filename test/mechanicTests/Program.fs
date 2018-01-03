@@ -1,8 +1,11 @@
-﻿// Learn more about F# at http://fsharp.org
+﻿open Expecto
+open Mechanic
 
-open System
+let tests =
+  test "A simple test" {
+    Expect.equal Say.foo "bar" "The strings should equal"
+  }
 
 [<EntryPoint>]
-let main argv =
-    Mechanic.Say.hello "Mechanic"
-    0 // return an integer exit code
+let main args =
+  runTestsWithArgs defaultConfig args tests
