@@ -70,6 +70,7 @@ Now we can build the solution (of the two projects) from the project directory
 dotnet build 
 ```
 
+Actually it is better to do smaller commits, so its easier to follow what has changed.
 
 
 
