@@ -72,5 +72,12 @@ dotnet build
 
 Actually it is better to do smaller commits, so its easier to follow what has changed.
 
-
+Let create a project reference 
+```
+cd test/mechanicTests                                                                                                                   dotnet add reference ../../src/mechanic/mechanic.fsproj              
+```
+and run the console-project
+```
+dotnet run --project test/mechanicTests/mechanicTests.fsproj   
+```
 

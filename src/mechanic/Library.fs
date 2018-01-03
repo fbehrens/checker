@@ -1,4 +1,4 @@
-namespace mechanic
+namespace Mechanic
 
 module Say =
     let hello name =
