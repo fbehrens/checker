@@ -3,6 +3,7 @@ framework: netcoreapp2.0
 
 nuget Expecto
 nuget Argu
+nuget Unquote
 
 group Build
   source https://api.nuget.org/v3/index.json

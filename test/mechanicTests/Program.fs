@@ -1,10 +1,12 @@
-﻿open Expecto
+﻿open Swensen.Unquote
+open Expecto
+
 open Mechanic
 
 let tests =
   test "A simple test" {
-    Expect.equal Say.foo "bar" "The strings should equal"
-  }
+    Say.foo =! "bar" 
+  }  
 
 [<EntryPoint>]
 let main args =
