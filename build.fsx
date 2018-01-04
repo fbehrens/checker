@@ -15,6 +15,7 @@ open Fake.Core.TargetOperators
 open Fake.Core.Globbing.Operators
 
 let mutable dotnetCliPath = "dotnet"
+let dotnetCliVersion = "2.1.3"
 
 let runDotNet args =
   let proc (info : ProcessStartInfo) =
@@ -24,6 +25,9 @@ let runDotNet args =
   let result = ProcessHelper.ExecProcess proc TimeSpan.MaxValue
   if result <> 0 then failwithf "dotnet %s failed" args
   
+Target.Create "InstallDotNet" <| fun _ ->
+  dotnetCliPath <- DotNetCli.InstallDotNetSDK dotnetCliVersion
+
 Target.Create "Build" <| fun _ ->
   runDotNet "build"
 
@@ -31,7 +35,8 @@ Target.Create "Test" <| fun _ ->
   !!"**/*Tests.fsproj"
   |> Seq.iter ( sprintf "run --project %s --no-build" >> runDotNet ) 
 
-"Build"
+"InstallDotNet"
+  ==> "Build"
   ==> "Test"
 
 Target.RunOrDefault "Test"
