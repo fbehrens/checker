@@ -24,7 +24,10 @@ let runDotNet args =
     info.Arguments <- args
   let result = ProcessHelper.ExecProcess proc TimeSpan.MaxValue
   if result <> 0 then failwithf "dotnet %s failed" args
-  
+
+Target.Create "Clean" <| fun _ ->
+  !!"**/bin"++"**/obj" |> CleanDirs
+
 Target.Create "InstallDotNet" <| fun _ ->
   dotnetCliPath <- DotNetCli.InstallDotNetSDK dotnetCliVersion
 
@@ -35,7 +38,8 @@ Target.Create "Test" <| fun _ ->
   !!"**/*Tests.fsproj"
   |> Seq.iter ( sprintf "run --project %s --no-build" >> runDotNet ) 
 
-"InstallDotNet"
+"Clean"
+  ==> "InstallDotNet"
   ==> "Build"
   ==> "Test"
 
