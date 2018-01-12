@@ -1,5 +1,6 @@
 obj
 bin
+load
 packages
 paket-files
 .fake

@@ -1,8 +1,5 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
-open Argu
-open Mechanic
+﻿open Argu
+open Checker
 
 type CLIArguments =
     | Working_Directory of path:string
@@ -20,4 +17,4 @@ let main argv =
     let wd = results.GetResult (<@ Working_Directory @>, defaultValue = ".")
     printfn "Working_Directory=%s" wd
     printfn "foo=%s" Say.foo
-    0 // return an integer exit code
+    0 

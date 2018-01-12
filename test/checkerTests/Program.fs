@@ -1,7 +1,7 @@
 ﻿open Swensen.Unquote
 open Expecto
 
-open Mechanic
+open Checker
 
 let tests =
   test "A simple test" {
