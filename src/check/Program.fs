@@ -16,5 +16,5 @@ let main argv =
     let results = parser.Parse argv
     let wd = results.GetResult (<@ Working_Directory @>, defaultValue = ".")
     printfn "Working_Directory=%s" wd
-    printfn "foo=%s" Say.foo
+    printfn "foo=%s" "bar"
     0 
