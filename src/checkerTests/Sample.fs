@@ -1,10 +1,9 @@
-module Tests
-
+module Tests.Sample
 open Expecto
 
 [<Tests>]
 let tests =
-  testList "samples" [
+  ptestList "samples" [
     testCase "universe exists (╭ರᴥ•́)" <| fun _ ->
       let subject = true
       Expect.isTrue subject "I compute, therefore I am."
