@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -eu
+dotnet run --project /Users/fb/Documents/Github/checker/src/check/check.fsproj --no-build -- "$@" 

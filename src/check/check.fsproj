@@ -1,14 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <ProjectReference Include="..\checker\checker.fsproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\checker\checker.fsproj" />
+    <Compile Include="check.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
