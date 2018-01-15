@@ -1,7 +1,7 @@
 ﻿open Argu
 open Checker
 
-type SubArgs =
+type SrtArgs =
     | [<Mandatory; MainCommand>] File of file:string
     | [<Mandatory; AltCommandLine("-s")>] Sec of sec:float
 with
@@ -21,7 +21,7 @@ with
 
 type CheckArgs =
     | Version of version:string
-    | [<CliPrefix(CliPrefix.None)>] Sub of ParseResults<SubArgs>
+    | [<CliPrefix(CliPrefix.None)>] Srt of ParseResults<SrtArgs>
     | [<CliPrefix(CliPrefix.None)>] Bla of ParseResults<BlaArgs>
 
 with
@@ -29,7 +29,7 @@ with
         member s.Usage =
             match s with
             | Version _ -> "current Version"
-            | Sub _ -> "Shift subtitle"
+            | Srt _ -> "Shift subtitle"
             | Bla _ -> "Bla Command"
 
 let parser = ArgumentParser.Create<CheckArgs>(programName = "check.exe",
@@ -41,7 +41,7 @@ let main argv =
     if results.IsUsageRequested then printfn "%s" (parser.PrintUsage())
     else 
         match results.GetSubCommand() with 
-        | Sub r -> 
+        | Srt r -> 
             if r.IsUsageRequested then printfn "%s" (r.Parser.PrintUsage())
             else 
                 let file = r.GetResult (<@ File @>)
