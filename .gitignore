@@ -4,3 +4,4 @@ load
 packages
 paket-files
 .fake
+.vs
