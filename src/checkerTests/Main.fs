@@ -1,4 +1,4 @@
-﻿module checkerTests
+module checkerTests
 open Expecto
 
 [<EntryPoint>]

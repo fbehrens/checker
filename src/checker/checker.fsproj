@@ -3,6 +3,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="util.fs" />
+    <Compile Include="regex.fs" />
+    <Compile Include="file.fs" />
     <Compile Include="subtitle.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />

@@ -1,4 +1,4 @@
-﻿open Argu
+open Argu
 open Checker
 
 type SrtArgs =

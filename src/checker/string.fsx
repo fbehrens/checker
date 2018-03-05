@@ -1,4 +1,5 @@
-#load "../../.paket/load/netcoreapp2.0/Unquote.fsx"
+#I "../../.paket/load/net47"
+#load "Unquote.fsx"
 open Swensen.Unquote
 
 "1\
@@ -19,6 +20,4 @@ s.[1..2] =! "bc" // substring
 " a ".Trim() =! "a"
  
 s.IndexOf("bc") =! 1
-
-
 "a".PadLeft(3,'-') =! "--a"

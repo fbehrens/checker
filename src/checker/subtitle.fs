@@ -1,4 +1,3 @@
-// namespace Checker
 module Checker.Subtitle 
 open System
 open System.Globalization

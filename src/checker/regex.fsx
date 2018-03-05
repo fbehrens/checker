@@ -1,4 +1,5 @@
-#load "../../.paket/load/netcoreapp2.0/Unquote.fsx"
+#I "../../.paket/load/net47"
+#load "Unquote.fsx"
 open Swensen.Unquote
 open System.Text.RegularExpressions
 // https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
@@ -106,8 +107,19 @@ isMatch "a" "(?i)A" // can be switched on in the midlle of a regex
 isMatch "a" "(?x)    a   #coment" 
 
 // m  multiline mode: ^ and $ match the beginning and end of a line (instead of string).  Attetion: use \r?$ to capture also CR
-Matches "1\nb\n3\n" @"(?m)^\d$"  //=! [["1"];["3"]]  
+Matches "1\nb\n3\n" @"(?m)^\d$"  =! [["1"];["3"]]  
 Matches "1\r\nb\r\n3\r\n"  @"(?m)^\d\r?$" =! [["1\r"];["3\r"]]
+
+
+// recognizing line ending
+let le = @"\r?\n$"
+isMatch "1\r\nb\r\n3\r\n" le
+isMatch "1\r\nb\r\n3\n"  le
+isNotMatch "1\r\nb\r\n3" le 
+
+
+
+
 
 // comment
 isMatch "ab" "a(?# this is an inline comment)b" // can be switched on in the midlle of a regex

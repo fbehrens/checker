@@ -8,7 +8,7 @@ nuget FSharp.Core prerelease
 #r @"packages/build/FAKE/tools/FakeLib.dll"
 open System
 open System.Diagnostics
-
+ 
 open Fake
 open Fake.Core
 open Fake.Core.TargetOperators
