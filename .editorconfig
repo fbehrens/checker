@@ -1,0 +1,23 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.sh]
+end_of_line = cr
+# [*.{js,py}] Matches multiple files with brace expansion notation
+
+# [lib/**.js]  all JS under lib directory
+# indent_style = space
+# indent_size = 2
+
+# [{package.json,.travis.yml}] Matches the exact files either package.json or .travis.yml
+# indent_style = space
+# indent_size = 2
