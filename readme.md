@@ -6,4 +6,12 @@ mono .paket/paket.exe install --generate-load-scripts --load-script-type fsx --l
 
 
 .\.paket\paket.exe install --generate-load-scripts --load-script-type fsx --load-script-framework netcoreapp2.0
+
+
+# test
+dotnet run -p src/checkerTests/checkerTests.fsproj
+
+
+
+
 ```
