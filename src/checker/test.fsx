@@ -1,8 +1,6 @@
 // #I "../../.paket/load/net47"
 #I "../../.paket/load/netcoreapp2.0"
-#load "Unquote.fsx"
-#load "expecto.fsx"
-open Swensen.Unquote
+#load "main.group.fsx"
 open Expecto
 
 #load"util.fs"
@@ -13,9 +11,21 @@ open Expecto
 
 #load"../checkerTests/fileTests.fs"
 #load"../checkerTests/projectTests.fs"
+#load"../checkerTests/regexTests.fs"
+
+
+
 
 #load"project.fs"
-#load"../checkerTests/projectTests.fs"
-open CheckerTests.Project
+Checker.Project.projects
+
+
+
+
+
+
+#load"../checkerTests/regexTests.fs"
+open CheckerTests.Regex
 runTests defaultConfig tests
+
 

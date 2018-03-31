@@ -8,10 +8,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="subtitleTests.fs" />
-    <Compile Include="Sample.fs" />
+    <Compile Include="regexTests.fs" />
     <Compile Include="fileTests.fs" />
     <Compile Include="Main.fs" />
-    <Compile Include="projectTests.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
