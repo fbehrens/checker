@@ -8,8 +8,14 @@ open Expecto
 #load"util.fs"
 #load"regex.fs"
 #load"subtitle.fs"
-
 #load"file.fs"
+#load"project.fs"
+
 #load"../checkerTests/fileTests.fs"
-runTests defaultConfig CheckerTests.File.tests
+#load"../checkerTests/projectTests.fs"
+
+#load"project.fs"
+#load"../checkerTests/projectTests.fs"
+open CheckerTests.Project
+runTests defaultConfig tests
 

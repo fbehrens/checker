@@ -7,6 +7,7 @@
     <Compile Include="regex.fs" />
     <Compile Include="file.fs" />
     <Compile Include="subtitle.fs" />
+    <Compile Include="project.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
