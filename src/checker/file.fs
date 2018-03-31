@@ -2,7 +2,7 @@ module Checker.File
 open System
 open System.IO
 open Checker
-
+let foo = "bar"
 let scripts2 path =
   (Environment.GetEnvironmentVariable("scripts2"),path)
   |> IO.Path.Combine
