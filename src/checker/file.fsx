@@ -1,10 +1,10 @@
-#I "../../.paket/load/net47"
+// #I "../../.paket/load/net47"
+#I "../../.paket/load/netcoreapp2.0"
 #load "Unquote.fsx"
 open Swensen.Unquote
 
 fsi.PrintSize <- 1000
 fsi.PrintDepth <-1000
-
 fsi.PrintLength <-10000
 fsi.PrintWidth <- 50
 
@@ -12,10 +12,10 @@ open System
 open System.IO
 open System.Text.RegularExpressions
 
-
-#load "util.fs" "regex.fs" "file.fs"
+#load "util.fs" "regex.fs" 
+#load "file.fs"
 open Checker.File
-cd libwba
+//cd libwba
 cd checker
 
 dir "."
