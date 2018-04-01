@@ -15,12 +15,9 @@ let notMatches p =
 let getMatches p s =
   [ for m in (regex p).Matches(s) ->
       m.Groups.[0].Value ]
-// getMatches "." "ab"
-
 let firstCapture p s =
     let m = (regex p).Match( s )
     m.Groups.[1].Value
-// firstCapture "a(.)c" "abc"
 
 let noneFirstCapture p s =
     let m = (regex p).Match( s )
@@ -31,7 +28,8 @@ let notmatchesGitEtc =
     notMatches @"\\(.git|bin|obj|packages|.fake|vendor|paket-files)\\"
 
 let matchesSource =
-    matches @"\.(ps1|psm1|fs|fsx)$"
+    matches @"\.(ps1|psm1|fs|fsx|fsproj)$"
+
 
 let projectFiles =
     List.filter notmatchesGitEtc >> List.filter matchesSource
