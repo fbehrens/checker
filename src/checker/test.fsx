@@ -3,6 +3,8 @@
 #load "main.group.fsx"
 open Expecto
 
+
+
 #load"util.fs"
 #load"regex.fs"
 #load"subtitle.fs"
@@ -13,19 +15,15 @@ open Expecto
 #load"../checkerTests/projectTests.fs"
 #load"../checkerTests/regexTests.fs"
 
-
-
-
+#load"regex.fs"
+#load"file.fs"
 #load"project.fs"
-Checker.Project.projects
+open Checker.Project
+projects
+|> List.iter load
 
-
-
-
-
-
-#load"../checkerTests/regexTests.fs"
-open CheckerTests.Regex
+#load"../checkerTests/fileTests.fs"
+open CheckerTests.File
 runTests defaultConfig tests
 
 

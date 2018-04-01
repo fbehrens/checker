@@ -50,9 +50,10 @@ let removeUtf8Bom file =
     | _ ->
         printfn "no"
 
+let text = File.ReadAllText
+
 let checkCrlf file =
-  let t = File.ReadAllText file
-  sprintf "%s %s" (Regex.lookCrlf t) file
+  sprintf "%s %s" (Regex.lookCrlf <| text file) file
 
 let normalizeCrlf file =
   let l = File.ReadAllLines file
