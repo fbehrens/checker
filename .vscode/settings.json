@@ -1,2 +1,11 @@
 {
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "packages": true,
+    "paket-files": true,
+    ".fake": true,
+    "**/obj": true,
+    "**/bin": true
+  }
 }
