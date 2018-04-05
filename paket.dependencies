@@ -8,4 +8,4 @@ nuget Unquote
 group Build
   source https://api.nuget.org/v3/index.json
 #  storage:none
-  nuget FAKE prerelease
+  nuget FAKE
