@@ -8,14 +8,11 @@ nuget FSharp.Core prerelease
 #r @"packages/build/FAKE/tools/FakeLib.dll"
 open System
 open System.Diagnostics
- 
+
 open Fake
-open Fake.Core
-open Fake.Core.TargetOperators
-open Fake.Core.Globbing.Operators
 
 let mutable dotnetCliPath = "dotnet"
-let dotnetCliVersion = "2.1.3"
+let dotnetCliVersion = "2.1.103"
 
 let runDotNet args =
   let proc (info : ProcessStartInfo) =
@@ -25,23 +22,22 @@ let runDotNet args =
   let result = ProcessHelper.ExecProcess proc TimeSpan.MaxValue
   if result <> 0 then failwithf "dotnet %s failed" args
 
-Target.Create "Clean" <| fun _ ->
+Target "Clean" <| fun _ ->
   !!"**/bin"++"**/obj" |> CleanDirs
 
-Target.Create "InstallDotNet" <| fun _ ->
+Target  "InstallDotNet" <| fun _ ->
   dotnetCliPath <- DotNetCli.InstallDotNetSDK dotnetCliVersion
 
-Target.Create "Build" <| fun _ ->
+Target "Build" <| fun _ ->
   runDotNet "build"
 
-Target.Create "Test" <| fun _ ->
+Target "Test" <| fun _ ->
   !!"**/*Tests.fsproj"
-  |> Seq.iter ( sprintf "run --project %s --no-build" >> runDotNet ) 
+  |> Seq.iter ( sprintf "run --project %s --no-build" >> runDotNet )
 
 "Clean"
   ==> "InstallDotNet"
   ==> "Build"
   ==> "Test"
 
-Target.RunOrDefault "Test"
-
+RunTargetOrDefault "Test"
