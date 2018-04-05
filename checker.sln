@@ -4,11 +4,11 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{31B82F9E-940F-47DE-9619-2360E57A3067}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "check", "src\check\check.fsproj", "{8C8BA1E7-644A-471F-9C19-3BD4C00DA0DB}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "check", "src/check/check.fsproj", "{8C8BA1E7-644A-471F-9C19-3BD4C00DA0DB}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "checker", "src\checker\checker.fsproj", "{8453440E-660A-4C55-89F3-EF85E86EC6EA}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "checker", "src/checker/checker.fsproj", "{8453440E-660A-4C55-89F3-EF85E86EC6EA}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "checkerTests", "src\checkerTests\checkerTests.fsproj", "{04D818F3-A721-464C-9061-6ACDB6EA1BF4}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "checkerTests", "src/checkerTests/checkerTests.fsproj", "{04D818F3-A721-464C-9061-6ACDB6EA1BF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
