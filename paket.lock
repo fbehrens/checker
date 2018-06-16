@@ -224,4 +224,4 @@ NUGET
 GROUP Build
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    FAKE (5.0.0-beta029)
+    FAKE (4.64.12)
