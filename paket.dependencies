@@ -1,10 +1,10 @@
 source https://www.nuget.org/api/v2
-framework: netcoreapp2.0
+framework: netcoreapp2.1
 
 nuget Expecto.FsCheck
 nuget Argu
 nuget Unquote
-
+nuget FSharp.Core
 group Build
   source https://api.nuget.org/v3/index.json
 #  storage:none
