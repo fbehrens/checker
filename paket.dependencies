@@ -5,7 +5,12 @@ nuget Expecto.VisualStudio.TestAdapter version_in_path: true
 nuget Argu
 nuget Unquote
 nuget FSharp.Core
+
 group Build
+  storage: none
   source https://api.nuget.org/v3/index.json
-#  storage:none
-  nuget FAKE
+
+  nuget Fake.DotNet.Cli
+  nuget Fake.IO.FileSystem
+  nuget Fake.Core.Target
+
